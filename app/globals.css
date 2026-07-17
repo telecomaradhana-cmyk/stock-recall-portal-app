@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-ink font-text;
+  letter-spacing: -0.011em;
+}
+
+h1, h2, h3, h4 {
+  @apply font-display tracking-tight;
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background: #0071e3;
+  color: white;
+}
+
+/* Apple-style focus ring, keyboard accessible */
+:focus-visible {
+  outline: 2px solid #0071e3;
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-full bg-accent px-5 py-2.5 text-[15px] font-medium text-white transition-colors duration-150 hover:bg-accent-dark disabled:opacity-40 disabled:cursor-not-allowed;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center rounded-full border border-hairline bg-white px-5 py-2.5 text-[15px] font-medium text-ink transition-colors duration-150 hover:bg-surface disabled:opacity-40 disabled:cursor-not-allowed;
+}
+
+.card {
+  @apply rounded-2xl border border-hairline bg-white shadow-card;
+}
+
+.input-field {
+  @apply w-full rounded-xl border border-hairline bg-white px-4 py-2.5 text-[15px] text-ink placeholder:text-muted transition-shadow duration-150 focus:border-accent focus:ring-2 focus:ring-accent/20;
+}
+
+.label {
+  @apply block text-[13px] font-medium text-muted mb-1.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
